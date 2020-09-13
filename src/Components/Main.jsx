@@ -5,7 +5,8 @@ import "antd/dist/antd.css";
 const Main = () => {
   return (
     <Router>
-      <Route path="/index/" exact component={Admin} />
+      {/* <Route path="/index/" exact component={Admin} /> */}
+      <Admin />
     </Router>
   );
 };

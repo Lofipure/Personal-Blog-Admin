@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Layout, Menu, Breadcrumb } from "antd";
 import "../Style/adminiIndex.css";
 import {
@@ -6,11 +6,12 @@ import {
   UserOutlined,
   DesktopOutlined,
 } from "@ant-design/icons";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+
+import List from "./List";
 import AddArticle from "./AddArticle";
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
 
 const AdminIndex = () => {
   return (
@@ -19,35 +20,23 @@ const AdminIndex = () => {
         <Header className={"slider-title"}>Lofipure's Blog</Header>
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
           <Menu.Item key="1">
-            <PieChartOutlined />
-            <span>工作台</span>
+            <DesktopOutlined />
+            <Link to="/">添加文章</Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <DesktopOutlined />
-            <span>添加文章</span>
+            <PieChartOutlined />
+            <Link to="/list">文章列表</Link>
           </Menu.Item>
-          <SubMenu
-            key="sub1"
-            title={
-              <span>
-                <UserOutlined />
-                <span>文章管理</span>
-              </span>
-            }
-          >
-            <Menu.Item key="3">添加文章</Menu.Item>
-            <Menu.Item key="4">文章列表</Menu.Item>
-          </SubMenu>
         </Menu>
       </Sider>
       <Layout>
         <Content style={{ margin: "0 16px" }}>
           <Breadcrumb style={{ margin: "16px 0" }}>
             <Breadcrumb.Item>后台管理</Breadcrumb.Item>
-            <Breadcrumb.Item>工作台</Breadcrumb.Item>
           </Breadcrumb>
           <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
-            <Route path="/index/" exact component={AddArticle} />
+            <Route path="/" exact component={AddArticle} />
+            <Route path="/list" exact component={List}></Route>
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>Lofipure</Footer>

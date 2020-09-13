@@ -43,7 +43,7 @@ const AddArticle = () => {
   const pushArticle = () => {
     let temp = articleContent.replace(/[\r\n]/g, "<nextLine>");
     temp = temp.replace(/\ +/g, "<space>");
-    temp = temp.replace(/"/g, "<doubelFlag>");
+    temp = temp.replace(/"/g, "<doubleFlag>");
     let obj = {
       articleTitle,
       articleContent: temp,
