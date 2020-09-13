@@ -36,7 +36,14 @@ const ListArticle = () => {
             <List.Item
               extra={
                 <div>
-                  <Button icon={<PaperClipOutlined />}>修改</Button>
+                  <Button
+                    icon={<PaperClipOutlined />}
+                    onClick={() => {
+                      alert("待开发，王子恒不想动了......");
+                    }}
+                  >
+                    修改
+                  </Button>
                   <Button
                     icon={<DeleteOutlined />}
                     onClick={handleDelete.bind(this, item.id)}
