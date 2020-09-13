@@ -5,7 +5,6 @@ import {
   PieChartOutlined,
   UserOutlined,
   DesktopOutlined,
-  FileAddFilled,
 } from "@ant-design/icons";
 import { Route } from "react-router-dom";
 import AddArticle from "./AddArticle";
@@ -39,15 +38,9 @@ const AdminIndex = () => {
             <Menu.Item key="3">添加文章</Menu.Item>
             <Menu.Item key="4">文章列表</Menu.Item>
           </SubMenu>
-
-          <Menu.Item key="9">
-            <FileAddFilled />
-            <span>留言管理</span>
-          </Menu.Item>
         </Menu>
       </Sider>
       <Layout>
-        <Header style={{ background: "#fff", padding: 0 }} />
         <Content style={{ margin: "0 16px" }}>
           <Breadcrumb style={{ margin: "16px 0" }}>
             <Breadcrumb.Item>后台管理</Breadcrumb.Item>
